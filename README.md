@@ -1,70 +1,79 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## AWS amplify
 
-## Available Scripts
+Firebase와 비슷한 기능을 함
 
-In the project directory, you can run:
+GraphQL API, REST API 기능 제공
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Firebase
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Firebase는 실무에서 쓰는 걸 권장하지 않고, 아이디어나 기능 구현을 빠르게 구현하고자할 때 사용
+유저가 서비스를 원하면 그 때 자신만의 서버, 사용자, 데이터베이스를 만듦
 
-### `npm test`
+### Build better apps
+<br/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Cloud Firestore
+- ios, android, web 모두 사용 가능
 
-### `npm run build`
+### Cloud Functions
+- ios, android, web 모두 사용 가능
+- serverless function의 기능을 제공 [ AWS의 lambda와 비슷 ]
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Cloud Storage
+- ios, android, web 모두 사용 가능
+- 파일 업로드 [ AWS의 S3와 비슷 ]
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Hosting
+- web 사용 가능
+- assets들을 배포하거나, React application을 배포하고자할 때 사용
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Authentication
+- ios, android, web 모두 사용 가능
+- Firebase의 중요 포인트
+- 이미 구현된 Authentication을 이용해서 인증 구현 시 10분도 안 걸림
 
-### `npm run eject`
+### Realtime Database
+- ios, android, web 모두 사용 가능
+- Firbase 원조 데이터베이스
+- 지금은 잘 사용하지 않음
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+---
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Improve app quality
+<br/>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Crashytics
+- ios, android, unity 사용 가능
+- application의 충돌 같은 것을 볼 수 있음
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Performance Monitoring
+- ios, android, web 모두 사용 가능
+- app의 성능을 보여주는 기능
 
-## Learn More
+### Test Lab
+- 웹사이트를 각종 기기별로 테스트할 수 있음
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### App Distribution
+- ios, android 사용 가능
+- ios, android의 버전 배포를 도와줌
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+### Grow your business
+<br/>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### In-App Messaging
+- ios, android 사용 가능
+- 앱 이용자들에게 메시지를 보냄
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Google Analytics
+- ios, android, web 사용 가능
+- 구글 광고
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Cloud Messaging
+- ios, android, web 사용 가능
+- 푸쉬 알림 사용
