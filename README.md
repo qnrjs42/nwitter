@@ -1,9 +1,33 @@
+## jsconfig.json
+
+```json
+{
+    "compilerOptions": {
+        "baseUrl": "src"
+    },
+    "include": [
+        "src"
+    ]
+}
+```
+
+```javascript
+import Router from './Router'; // jsconfig.json 적용 전
+import fbase from '../fbase'; // jsconfig.json 적용 전
+
+import fbase from 'fbase'; // jsconfig.json 적용 후
+import Router from 'components/Router'; // jsconfig.json 적용 후
+```
+
+
+---
+
+
 ## Firebase .env
 
 REACT_APP_ 으로 시작해야 함
 
 ---
-
 
 ## AWS amplify
 
