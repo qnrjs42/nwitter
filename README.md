@@ -1,3 +1,9 @@
+## Firebase .env
+
+REACT_APP_ 으로 시작해야 함
+
+---
+
 
 ## AWS amplify
 
