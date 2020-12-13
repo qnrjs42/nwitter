@@ -26,7 +26,7 @@ const App = (() => {
         ? <Router isLoggedIn={isLoggedIn} userObj={userObj} />
         : "Initializing..."
       }
-      <footer>&copy; {new Date().getFullYear()} Nwiiter</footer>
+      {/* <footer>&copy; {new Date().getFullYear()} Nwiiter</footer> */}
     </div>
   );
 }) 
