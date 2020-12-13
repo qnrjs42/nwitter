@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 const Home = ({userObj}) => {
   const [nweet, setNweet] = useState("");
   const [nweets, setNweets] = useState([]);
+  const [attachment, setAttachment] = useState();
 
   useEffect(() => {
     dbService.collection('nweets').onSnapshot(snapshot => {
@@ -36,8 +37,13 @@ const Home = ({userObj}) => {
     const reader = new FileReader();
     reader.onloadend = (finishedEvent) => {
       console.log(finishedEvent);
+      const { currentTarget: { result }} = finishedEvent;
+      setAttachment(result);
     }
     reader.readAsDataURL(theFile);
+  }
+  const onClearAttachmentClick = () => {
+    setAttachment(null);
   }
   return (
     <>
@@ -51,13 +57,19 @@ const Home = ({userObj}) => {
         />
         <input type="file" accept="image/*" onChange={onFileChange} />
         <input type="submit" value="Nweet" />
+        {attachment && (
+          <div>
+            <img src={attachment} width="50px" height="50px" />
+            <button onClick={onClearAttachmentClick}>Clear</button>
+          </div>
+        )}
       </form>
       <div>
         {nweets.map((nweet) => (
-          <Nweet 
-            key={nweet.id} 
-            nweetObj={nweet} 
-            isOwner={nweet.creatorId === userObj.uid} 
+          <Nweet
+            key={nweet.id}
+            nweetObj={nweet}
+            isOwner={nweet.creatorId === userObj.uid}
           />
         ))}
       </div>
