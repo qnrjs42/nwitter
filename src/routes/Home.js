@@ -78,12 +78,11 @@ const Home = ({userObj}) => {
         )}
       </form>
       <div>
-        {console.log(nweets, userObj.uid)}
         {nweets.map((nweet) => (
           <Nweet
             key={nweet.id}
-            nweetObj={nweet.nweetObj}
-            isOwner={nweet.nweetObj.creatorId === userObj.uid}
+            nweetObj={nweet}
+            isOwner={nweet.creatorId === userObj.uid}
           />
         ))}
       </div>
