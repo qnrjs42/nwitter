@@ -19,15 +19,24 @@ const Home = ({userObj}) => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    const fileRef = storageService.ref().child(`${userObj.uid}/${uuidv4()}`);
-    const response = await fileRef.putString(attachment, 'data_url');
-    console.log("response", response);
-    // await dbService.collection("nweets").add({
-    //   text: nweet,
-    //   createdAt: Date.now(),
-    //   creatorId: userObj.uid,
-    // });
-    // setNweet('');
+    let attachmentUrl = "";
+    if(attachment !== "") {
+      const attachmentRef = storageService
+        .ref()
+        .child(`${userObj.uid}/${uuidv4()}`);
+      const response = await attachmentRef.putString(attachment, "data_url");
+      attachmentUrl = await response.ref.getDownloadURL();
+    }
+    
+    const nweetObj = {
+      text: nweet,
+      createdAt: Date.now(),
+      creatorId: userObj.uid,
+      attachmentUrl,
+    };
+    await dbService.collection("nweets").add(nweetObj);
+    setNweet("");
+    setAttachment("");
   }
 
   const onChange = (e) => {
@@ -69,11 +78,12 @@ const Home = ({userObj}) => {
         )}
       </form>
       <div>
+        {console.log(nweets, userObj.uid)}
         {nweets.map((nweet) => (
           <Nweet
             key={nweet.id}
-            nweetObj={nweet}
-            isOwner={nweet.creatorId === userObj.uid}
+            nweetObj={nweet.nweetObj}
+            isOwner={nweet.nweetObj.creatorId === userObj.uid}
           />
         ))}
       </div>
